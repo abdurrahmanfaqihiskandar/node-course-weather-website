@@ -39,7 +39,7 @@ app.get('/about', (req, res) => {
 // Dynamic help page
 app.get('/help', (req, res) => {
     res.render('help', {
-        title: 'Help Me',
+        title: 'Help Page',
         name: 'Faqih'
     });
 })
