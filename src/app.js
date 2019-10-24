@@ -66,9 +66,9 @@ app.get('/weather', (req, res) => {
                 
                 // Geocode and forecast data all good
                 res.send({
-                    forecast: forecastData,
+                    forecast: forecastData.forecast,
                     location,
-                    address: req.query.address
+                    tempHighLow: `${location} will have a temperature high of ${forecastData.tempHigh} degrees and a temperature low of ${forecastData.tempLow} degrees`
                 }); // end send
             }); // end forecast
         }); // end geocode

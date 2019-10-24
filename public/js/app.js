@@ -2,6 +2,7 @@ const weatherForm = document.querySelector('form');
 const search = document.querySelector('input');
 const message1 = document.querySelector('#message-1');
 const message2 = document.querySelector('#message-2');
+const message3 = document.querySelector('#message-3');
 
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -10,6 +11,7 @@ weatherForm.addEventListener('submit', (e) => {
 
     message1.textContent = "Loading please wait...";
     message2.textContent = '';
+    message3.textContent = '';
 
     fetch('/weather?address=' + location)
     .then(response => {
@@ -19,6 +21,7 @@ weatherForm.addEventListener('submit', (e) => {
             } else {
                 message1.textContent = data.location;
                 message2.textContent = data.forecast;
+                message3.textContent = data.tempHighLow;
             }
         });
     });
